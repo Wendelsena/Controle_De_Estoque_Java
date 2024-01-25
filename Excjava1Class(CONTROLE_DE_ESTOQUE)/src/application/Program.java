@@ -21,10 +21,13 @@ public class Program {
 		double price = sc.nextDouble();
 		System.out.print("Quantity in stock: ");
 		int quantity = sc.nextInt(); 
-		
 		Product product = new Product(name, price, quantity); // colocamos depois da leitura dos dados criando variaveis temporarias.
 		// contrutor serve para proteger o projeto, obrigando o programador a informar os dados do produto.
-		
+		System.out.println();
+		product.setName("Televison");
+		System.out.println("Updated name: " + product.getName());
+		product.setPrice(1200.00);
+		System.out.println("Updated price: " + product.getPrice());
 		// product.equals(); --- usado para comparar se dois objetos têm o mesmo conteúdo
 		// product.toString(); --- converte um objeto em uma representação de string (para simplifcar a operação de baixo.)
 		// ao invés disso -- System.out.println(product.name + ", " + product.price + ", " + product.quantity); -- se sua:
