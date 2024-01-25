@@ -12,15 +12,18 @@ public class Program {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner (System.in);
 		
-		Product product = new Product(); // para puxar outras Class
+		// Product product = new Product(); // para puxar outras Class -- não funciona devido a criação do construtor.
 		System.out.println("Enter product data: ");
 		
 		System.out.print("Name: ");
-		product.name = sc.nextLine(); // para pegar uma variavel em outra class
+		String name = sc.nextLine(); // antes product.name para pegar uma variavel em outra class
 		System.out.print("Price: ");
-		product.price = sc.nextDouble();
+		double price = sc.nextDouble();
 		System.out.print("Quantity in stock: ");
-		product.quantity = sc.nextInt();
+		int quantity = sc.nextInt(); 
+		
+		Product product = new Product(name, price, quantity); // colocamos depois da leitura dos dados criando variaveis temporarias.
+		// contrutor serve para proteger o projeto, obrigando o programador a informar os dados do produto.
 		
 		// product.equals(); --- usado para comparar se dois objetos têm o mesmo conteúdo
 		// product.toString(); --- converte um objeto em uma representação de string (para simplifcar a operação de baixo.)
@@ -31,7 +34,7 @@ public class Program {
 		
 		System.out.println();
 		System.out.printf("Enter the number of products to be addes in stock: ");
-		int quantity = sc.nextInt();
+		quantity = sc.nextInt();
 		product.addProduct(quantity); // faz a atualização dentro do objeto product
 		
 		System.out.println();
